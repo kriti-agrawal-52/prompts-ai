@@ -50,10 +50,8 @@ export function PromptEditor() {
     const maxTokens = useSelector(selectMaxTokens);
     const stopSymbols = useSelector(selectStopSymbols);
 
-    const availableModelNames = ['davinci', 'davinci-instruct-beta',
-        'curie', 'curie-instruct-beta',
-        'babbage',
-        'ada'];
+    const availableModelNames = ['curie:ft-writesonic-inc-2022-02-18-20-06-41','text-davinci-001','text-curie-001','text-babbage-001','text-ada-001',
+        'davinci', 'davinci-instruct-beta','curie', 'curie-instruct-beta','babbage','ada'];
     const modelName = useSelector(selectModelName);
 
     const handlePromptChange = (event: React.FormEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -175,11 +173,11 @@ export function PromptEditor() {
                                     value: 0,
                                     label: '0',
                                 }, {
-                                    value: 1,
-                                    label: '1',
+                                    value: 2,
+                                    label: '2',
                                 }]}
                                 min={0}
-                                max={1}
+                                max={2}
                             />
                             <Typography id="max-tokens-slider" gutterBottom>
                                 Response length: <strong>{maxTokens}</strong>
